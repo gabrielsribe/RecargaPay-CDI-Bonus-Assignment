@@ -45,4 +45,35 @@ Given the mission-critical nature of the service, the following monitoring strat
 This solution enables problems to be diagnosed quickly and the process to remain transparent to data engineers and stakeholders.
 
 ## Data architecture
-High-level view of the data architecture:
+
+Although the case does not explicitly require a defined data architecture, this section presents how the data would be organized following the Medallion architecture principles. Note that in the provided notebook, all logic is consolidated into a single flow to simplify the evaluation of the implementation. Additionally, the CDI interest rate table is dynamically created at runtime for demonstration purposes.
+
+![alt text](diagrams/data_architecture.png?raw=true "Data Architecture")
+
+**Bronze Layer**
+
+The Bronze layer stores raw, unprocessed data ingested directly from the source systems:
+
+- `raw_cdc_data`: Contains the wallet transactions in a change data capture (CDC) format. This table serves as the basis for building account balances over time.
+- `raw_cdi_interest`: Contains the historical daily CDI interest rates, after being obtained via API or another system. No transformation is applied to this layer.
+
+This layer ensures data traceability and allows reprocessing in the event of upstream changes or errors.
+
+
+**Silver Layer**
+
+The Silver layer applies cleansing, normalization and business modeling to prepare the data for analytical use:
+
+- `wallet_history`: A curated and validated representation of each user's wallet balance by day.
+
+- `cdi_interest_history`: A clean, structured version of CDI interest rates, with consistent formatting and guaranteed integrity over the expected date ranges.
+
+These intermediate tables separate the raw ingestion from the final business logic, allowing for easier testing and troubleshooting.
+
+**Gold Layer**
+
+The Gold layer contains results with the business logic applied by combining the necessary data sources and is also where the final version of the Data Products are made available:
+
+- `cdi_payout`: This table is the final product of the pipeline. It contains the daily CDI bonus payment per user, calculated by joining wallet_history with cdi_interest_history and applying all the eligibility criteria. This dataset is intended to be consumed by downstream systems, such as a production relational database, for further processing and making available to the end user.
+
+This layered approach allows for easy use of the data, providing a clear lineage and a reliable database for extending the pipeline with additional use cases by reusing the data from the Data Product.

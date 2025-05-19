@@ -4,7 +4,6 @@ The proposed solution notebook is provided in this section. As mentioned earlier
 
 As explained during the interview, the role involves migrating data tables and processing logic from Redshift to Databricks. Therefore, this solution was implemented using Databricks Community Edition.
 
-Databricks Community Edition is avalaible here: [Databricks Community Edition] (https://community.cloud.databricks.com)
-Guide - [How to use databricks community edition] (https://docs.databricks.com/aws/pt/getting-started/community-edition)
+Databricks Community Edition is avalaible here: [Databricks Community Edition](https://community.cloud.databricks.com)
 
-
+Guide - [How to use databricks community edition](https://docs.databricks.com/aws/pt/getting-started/community-edition)

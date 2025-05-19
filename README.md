@@ -14,7 +14,7 @@ This approach makes it possible not only to meet the project's immediate require
 
 To build a robust, observable, and scalable pipeline for calculating and distributing the CDI Bonus, I designed a data pipeline based on the following high-level architecture:
 
-![alt text](https://github.com/gabrielsribe/RecargaPay-CDI-Bonus-Assignment/blob/arquitetura_geral/diagrams/overall_architecture.png)
+![alt text](diagrams/overall_architecture.png?raw=true "Architecture")
 
 The pipeline is orchestrated using Apache Airflow, which handles scheduling, dependency management and monitoring. Data is organized using the medallion architecture (Bronze -> Silver -> Gold), separating responsibilities between the ingestion, transformation and business logic layers.
 

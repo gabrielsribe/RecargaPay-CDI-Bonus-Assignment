@@ -77,3 +77,6 @@ The Gold layer contains results with the business logic applied by combining the
 - `cdi_payout`: This table is the final product of the pipeline. It contains the daily CDI bonus payment per user, calculated by joining wallet_history with cdi_interest_history and applying all the eligibility criteria. This dataset is intended to be consumed by downstream systems, such as a production relational database, for further processing and making available to the end user.
 
 This layered approach allows for easy use of the data, providing a clear lineage and a reliable database for extending the pipeline with additional use cases by reusing the data from the Data Product.
+
+
+After presenting the architecture of the solution and the data, the data product documentation is available here: [Data Product Documentation](https://github.com/gabrielsribe/RecargaPay-CDI-Bonus-Assignment/blob/arquitetura_geral/data_product/README.md)

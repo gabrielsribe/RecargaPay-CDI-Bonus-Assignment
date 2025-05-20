@@ -2,7 +2,7 @@
 
 ### Purpose
 
-The goal of this module is to compute the daily balance per `account_id` using raw transactional events provided in a Change Data Capture (CDC) format. This is a foundational step for the CDI Bonus calculation, ensuring a reliable historical view of account balances, even for days with no transactions.
+The goal of this table is to compute the daily balance per `account_id` using raw transactional events provided in a Change Data Capture (CDC) format. This is a foundational step for the CDI Bonus calculation, ensuring a reliable historical view of account balances, even for days with no transactions.
 
 ---
 

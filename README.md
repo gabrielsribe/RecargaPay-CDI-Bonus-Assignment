@@ -82,4 +82,6 @@ This layered approach allows for easy use of the data, providing a clear lineage
 
 After presenting the architecture of the solution and the data, the data product documentation is available here: [Data Product Documentation](https://github.com/gabrielsribe/RecargaPay-CDI-Bonus-Assignment/blob/data_product/README.md)
 
-The notebook documentation is available here: [Notebook](https://github.com/gabrielsribe/RecargaPay-CDI-Bonus-Assignment/blob/notebook/notebook/README.md)
+The notebook is available here: [Notebook](https://github.com/gabrielsribe/RecargaPay-CDI-Bonus-Assignment/blob/notebook/notebook/README.md)
+
+The documentation for the intermediate table can be found here [User Balance Table](https://github.com/gabrielsribe/RecargaPay-CDI-Bonus-Assignment/blob/user_balance_table/README.md)
